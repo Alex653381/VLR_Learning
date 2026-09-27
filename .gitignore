@@ -1,0 +1,12 @@
+Reproduction/VGGNet/data/
+
+Reproduction/VGGNet/models/*
+!Reproduction/VGGNet/models/.gitkeep
+
+*.pth
+*.pt
+*.ckpt
+*.onnx
+
+__pycache__/
+*.py[cod]
