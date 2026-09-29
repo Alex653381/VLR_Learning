@@ -26,15 +26,26 @@
 #### 1.3 加载官方预训练权重进行微调
 
 模型：VGG16
+
 预训练权重：ImageNet1K V1
 训练方式：冻结卷积层，只训练分类头
+
 数据：18000 train / 2000 val / 5000 test
+
 epoch：5
+
 最佳 epoch：4
+
 best val accuracy：98.60%
+
 test accuracy：98.34%
+
 cat accuracy：97.56%
+
 dog accuracy：99.12%
+
 correct：4917/5000
+
 测试耗时：32.40 秒
+
 平均单张推理时间：6.48 ms
