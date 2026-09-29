@@ -26,18 +26,27 @@
 #### 1.3 加载官方预训练权重进行微调
 
 环境：
+
     System: Windows11
+    
     RAM: 64GB
+    
     GPU：NVIDIA GeForce RTX 5070 Laptop GPU (8 GB)
+    
     CUDA Version: 12.8
+   
     Python Version: Python 3.10.21
+    
     Pytorch Version: torch 2.11.0+cu128  
+                     
                      torchaudio 2.11.0+cu128 
+                     
                      torchvision 0.26.0+cu128
 
 模型：VGG16
 
 预训练权重：ImageNet1K V1
+
 训练方式：冻结卷积层，只训练分类头
 
 数据：18000 train / 2000 val / 5000 test
