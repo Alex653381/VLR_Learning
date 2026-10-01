@@ -10,35 +10,10 @@
 
 ### 1.VGGNet
 
-项目结构：
-`````
-VGGNet
-│  index.md
-│  list.txt
-│  make_reference.py
-│  predict.py
-│  predict_by_non_fine-tuning_pretrained_model.py
-│  test_pretrained.py
-│  train.py
-│  train_pretrained.py
-│  
-├─data
-│  └─catVSdog
-│      │  test.txt
-│      │  train.txt
-│      │  
-│      ├─test_data
-│      │  ├─cat
-│      │  └─dog
-│      └─train_data
-│          ├─cat_train
-│          └─dog_train
-├─images
-│      test_dog.jpg
-│      
-├─models
-│      vgg16_catvsdog_head_best.pth
-│      
-└─process_record
-        non_fine-tuning vgg16.png
-`````
+使用CatVSDog数据集从零训练vgg16进行二分零
+
+使用pytorch官方的vgg16权重（IMAGENET1K_V1）针对CatVSDog数据集进行微调训练
+
+### 2.ResNet
+
+参考MMPretrain代码框架复现ResNet，并针对CatVSDog数据集进行微调训练
