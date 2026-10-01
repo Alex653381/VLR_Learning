@@ -10,7 +10,7 @@
 
 ### 1.VGGNet
 
-使用CatVSDog数据集从零训练vgg16进行二分零
+使用CatVSDog数据集从零训练vgg16进行二分类
 
 使用pytorch官方的vgg16权重（IMAGENET1K_V1）针对CatVSDog数据集进行微调训练
 
