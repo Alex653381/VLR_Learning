@@ -1,6 +1,42 @@
 # Reproduction of VGGNet(VGG16)
 
 
+## 1.0 目录结构
+
+项目结构：
+`````
+VGGNet
+│  index.md
+│  list.txt
+│  make_reference.py
+│  predict.py
+│  predict_by_non_fine-tuning_pretrained_model.py
+│  test_pretrained.py
+│  train.py
+│  train_pretrained.py
+│  
+├─data
+│  └─catVSdog
+│      │  test.txt
+│      │  train.txt
+│      │  
+│      ├─test_data
+│      │  ├─cat
+│      │  └─dog
+│      └─train_data
+│          ├─cat_train
+│          └─dog_train
+├─images
+│      test_dog.jpg
+│      
+├─models
+│      vgg16_catvsdog_head_best.pth
+│      
+└─process_record
+        non_fine-tuning vgg16.png
+`````
+
+
 ## 1.1 评估未微调的官方权重模型
 下载官方预训练的VGG16权重（ImageNet V1），并用猫狗数据集进行测试与评估。在VGGNet目录下运行
 `python predict_by_non_fine-tuning_pretrained_model.py`
