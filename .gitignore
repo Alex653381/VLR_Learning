@@ -1,6 +1,7 @@
 Reproduction/VGGNet/data/
-
+Reproduction/ResNet/data/
 Reproduction/VGGNet/models/*
+Reproduction/ResNet/models/*
 !Reproduction/VGGNet/models/.gitkeep
 
 *.pth

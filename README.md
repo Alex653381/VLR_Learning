@@ -12,7 +12,7 @@
 
 项目结构：
 `````
-C:.
+VGGNet
 │  index.md
 │  list.txt
 │  make_reference.py
