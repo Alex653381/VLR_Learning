@@ -53,7 +53,7 @@ VGGNet
 
 环境：
 
-    System: Windows11
+    System: Ubuntu-24.04
     
     RAM: 64GB
     
@@ -81,16 +81,16 @@ epoch：5
 
 最佳 epoch：4
 
-best val accuracy：98.60%
+best val accuracy：98.45%
 
-test accuracy：98.34%
+test accuracy：98.4000%
 
-cat accuracy：97.56%
+cat accuracy：98.2800%
 
-dog accuracy：99.12%
+dog accuracy：98.5200%
 
-correct：4917/5000
+correct：4920/5000
 
-测试耗时：32.40 秒
+Total time: 14.87 seconds
 
-平均单张推理时间：6.48 ms
+Average time per image: 2.97 ms
