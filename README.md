@@ -8,6 +8,33 @@
 
 这里是经典论文、模型的学习与复现，复现过程已记录在各子目录下的 notes.md 中。
 
+### 数据和模型下载
+
+仓库不直接提交数据集和模型权重。相关文件请在 GitHub Releases 中下载：
+
+- vggnet_data.tar.gz
+- vggnet_models.tar.gz
+- resnet_data.tar.gz
+- resnet_work_dirs.tar.gz
+
+下载后在 `Reproduction` 目录中解压：
+
+```bash
+cd Reproduction
+tar -xzf vggnet_data.tar.gz
+tar -xzf vggnet_models.tar.gz
+tar -xzf resnet_data.tar.gz
+tar -xzf resnet_work_dirs.tar.gz
+```
+
+在 Reproduction 目录解压，会自动恢复到正确位置:
+```
+VGGNet/data/...
+VGGNet/models/...
+ResNet/data/...
+ResNet/work_dirs/...
+```
+
 ### 1.VGGNet
 
 使用CatVSDog数据集从零训练vgg16进行二分类。
