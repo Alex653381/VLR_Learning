@@ -1,0 +1,282 @@
+10/03 17:13:23 - mmengine - INFO - 
+------------------------------------------------------------
+System environment:
+    sys.platform: linux
+    Python: 3.10.22 (main, Oct  1 2026, 20:14:04) [GCC 14.3.0]
+    CUDA available: True
+    MUSA available: False
+    numpy_random_seed: 42
+    GPU 0: NVIDIA GeForce RTX 5070 Laptop GPU
+    CUDA_HOME: None
+    GCC: gcc (Ubuntu 14.2.0-4ubuntu2~24.04.1) 14.2.0
+    PyTorch: 2.11.0+cu128
+    PyTorch compiling details: PyTorch built with:
+  - GCC 13.3
+  - C++ Version: 201703
+  - Intel(R) oneAPI Math Kernel Library Version 2024.2-Product Build 20240605 for Intel(R) 64 architecture applications
+  - Intel(R) MKL-DNN v3.10.2 (Git Hash f1d471933dc852f956fd05389f9313c7148783d5)
+  - OpenMP 201511 (a.k.a. OpenMP 4.5)
+  - LAPACK is enabled (usually provided by MKL)
+  - NNPACK is enabled
+  - CPU capability usage: AVX2
+  - CUDA Runtime 12.8
+  - NVCC architecture flags: -gencode;arch=compute_75,code=sm_75;-gencode;arch=compute_80,code=sm_80;-gencode;arch=compute_86,code=sm_86;-gencode;arch=compute_90,code=sm_90;-gencode;arch=compute_100,code=sm_100;-gencode;arch=compute_120,code=sm_120
+  - CuDNN 91.9  (built against CUDA 12.9)
+  - Magma 2.6.1
+  - Build settings: BLAS_INFO=mkl, BUILD_TYPE=Release, COMMIT_SHA=70d99e998b4955e0049d13a98d77ae1b14db1f45, CUDA_VERSION=12.8, CUDNN_VERSION=9.19.0, CXX_COMPILER=/opt/rh/gcc-toolset-13/root/usr/bin/c++, CXX_FLAGS= -fvisibility-inlines-hidden -DUSE_PTHREADPOOL -DNDEBUG -DUSE_KINETO -DLIBKINETO_NOROCTRACER -DLIBKINETO_NOXPUPTI=ON -DUSE_FBGEMM -DUSE_MSLK -DUSE_PYTORCH_QNNPACK -DUSE_XNNPACK -DSYMBOLICATE_MOBILE_DEBUG_HANDLE -O2 -fPIC -DC10_NODEPRECATED -Wall -Wextra -Werror=return-type -Werror=non-virtual-dtor -Werror=range-loop-construct -Werror=bool-operation -Wnarrowing -Wno-missing-field-initializers -Wno-unknown-pragmas -Wno-unused-parameter -Wno-strict-overflow -Wno-strict-aliasing -Wno-stringop-overflow -Wsuggest-override -Wno-psabi -Wno-error=old-style-cast -faligned-new -Wno-maybe-uninitialized -fno-math-errno -fno-trapping-math -Werror=format -Wno-dangling-reference -Wno-error=dangling-reference -Wno-stringop-overflow, LAPACK_INFO=mkl, PERF_WITH_AVX=1, PERF_WITH_AVX2=1, TORCH_VERSION=2.11.0, USE_CUDA=ON, USE_CUDNN=ON, USE_CUSPARSELT=1, USE_GFLAGS=OFF, USE_GLOG=OFF, USE_GLOO=ON, USE_MKL=ON, USE_MKLDNN=ON, USE_MPI=OFF, USE_NCCL=1, USE_NNPACK=ON, USE_OPENMP=ON, USE_ROCM=OFF, USE_ROCM_KERNEL_ASSERT=OFF, USE_XCCL=OFF, USE_XPU=OFF, 
+
+    TorchVision: 0.26.0+cu128
+    OpenCV: 5.0.0
+    MMEngine: 0.10.7
+
+Runtime environment:
+    cudnn_benchmark: False
+    mp_cfg: {'mp_start_method': 'fork', 'opencv_num_threads': 0}
+    dist_cfg: {'backend': 'nccl'}
+    seed: 42
+    deterministic: False
+    Distributed launcher: none
+    Distributed training: False
+    GPU number: 1
+------------------------------------------------------------
+
+10/03 17:13:23 - mmengine - INFO - Config:
+data_preprocessor = dict(
+    mean=[
+        123.675,
+        116.28,
+        103.53,
+    ],
+    num_classes=2,
+    std=[
+        58.395,
+        57.12,
+        57.375,
+    ],
+    to_rgb=True)
+data_root = 'data/catVSdog/'
+dataset_type = 'CustomDataset'
+default_hooks = dict(
+    checkpoint=dict(
+        interval=1,
+        max_keep_ckpts=2,
+        rule='greater',
+        save_best='accuracy/top1',
+        type='CheckpointHook'),
+    logger=dict(interval=50, type='LoggerHook'),
+    param_scheduler=dict(type='ParamSchedulerHook'),
+    sampler_seed=dict(type='DistSamplerSeedHook'),
+    timer=dict(type='IterTimerHook'),
+    visualization=dict(enable=False, type='VisualizationHook'))
+default_scope = 'mmpretrain'
+env_cfg = dict(
+    cudnn_benchmark=False,
+    dist_cfg=dict(backend='nccl'),
+    mp_cfg=dict(mp_start_method='fork', opencv_num_threads=0))
+launcher = 'none'
+load_from = 'work_dirs/resnet18_catdog_smoke/epoch_1.pth'
+log_level = 'INFO'
+model = dict(
+    backbone=dict(
+        depth=18,
+        init_cfg=dict(
+            checkpoint=
+            'https://download.openmmlab.com/mmclassification/v0/resnet/resnet18_8xb32_in1k_20210831-fbbb1da6.pth',
+            prefix='backbone.',
+            type='Pretrained'),
+        num_stages=4,
+        out_indices=(3, ),
+        style='pytorch',
+        type='ResNet'),
+    head=dict(
+        in_channels=512,
+        loss=dict(loss_weight=1.0, type='CrossEntropyLoss'),
+        num_classes=2,
+        topk=(1, ),
+        type='LinearClsHead'),
+    neck=dict(type='GlobalAveragePooling'),
+    type='ImageClassifier')
+optim_wrapper = dict(
+    optimizer=dict(lr=0.01, momentum=0.9, type='SGD', weight_decay=0.0001))
+param_scheduler = dict(
+    begin=0,
+    by_epoch=True,
+    end=10,
+    gamma=0.1,
+    milestones=[
+        6,
+        9,
+    ],
+    type='MultiStepLR')
+pretrained_url = 'https://download.openmmlab.com/mmclassification/v0/resnet/resnet18_8xb32_in1k_20210831-fbbb1da6.pth'
+randomness = dict(deterministic=False, seed=42)
+resume = False
+test_cfg = dict()
+test_dataloader = dict(
+    batch_size=32,
+    collate_fn=dict(type='default_collate'),
+    dataset=dict(
+        ann_file='test_split.txt',
+        data_prefix='',
+        data_root='data/catVSdog/',
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(edge='short', scale=256, type='ResizeEdge'),
+            dict(crop_size=224, type='CenterCrop'),
+            dict(type='PackInputs'),
+        ],
+        type='CustomDataset'),
+    num_workers=4,
+    pin_memory=True,
+    sampler=dict(shuffle=False, type='DefaultSampler'))
+test_evaluator = dict(topk=(1, ), type='Accuracy')
+test_pipeline = [
+    dict(type='LoadImageFromFile'),
+    dict(edge='short', scale=256, type='ResizeEdge'),
+    dict(crop_size=224, type='CenterCrop'),
+    dict(type='PackInputs'),
+]
+train_cfg = dict(by_epoch=True, max_epochs=10, val_interval=1)
+train_dataloader = dict(
+    batch_size=32,
+    dataset=dict(
+        ann_file='train_split.txt',
+        data_prefix='',
+        data_root='data/catVSdog/',
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(scale=224, type='RandomResizedCrop'),
+            dict(direction='horizontal', prob=0.5, type='RandomFlip'),
+            dict(type='PackInputs'),
+        ],
+        type='CustomDataset'),
+    num_workers=4,
+    sampler=dict(shuffle=True, type='DefaultSampler'))
+train_pipeline = [
+    dict(type='LoadImageFromFile'),
+    dict(scale=224, type='RandomResizedCrop'),
+    dict(direction='horizontal', prob=0.5, type='RandomFlip'),
+    dict(type='PackInputs'),
+]
+val_cfg = dict()
+val_dataloader = dict(
+    batch_size=32,
+    dataset=dict(
+        ann_file='val_split.txt',
+        data_prefix='',
+        data_root='data/catVSdog/',
+        pipeline=[
+            dict(type='LoadImageFromFile'),
+            dict(edge='short', scale=256, type='ResizeEdge'),
+            dict(crop_size=224, type='CenterCrop'),
+            dict(type='PackInputs'),
+        ],
+        type='CustomDataset'),
+    num_workers=4,
+    sampler=dict(shuffle=False, type='DefaultSampler'))
+val_evaluator = dict(topk=(1, ), type='Accuracy')
+vis_backends = [
+    dict(type='LocalVisBackend'),
+    dict(type='mmengine.TensorboardVisBackend'),
+]
+visualizer = dict(
+    type='UniversalVisualizer',
+    vis_backends=[
+        dict(type='LocalVisBackend'),
+        dict(type='mmengine.TensorboardVisBackend'),
+    ])
+work_dir = 'work_dirs/resnet18_catdog_smoke_test'
+
+/home/alex/miniconda3/envs/res_pytorch/lib/python3.10/site-packages/mmcv/cnn/bricks/transformer.py:33: UserWarning: Fail to import ``MultiScaleDeformableAttention`` from ``mmcv.ops.multi_scale_deform_attn``, You should install ``mmcv`` rather than ``mmcv-lite`` if you need this module. 
+  warnings.warn('Fail to import ``MultiScaleDeformableAttention`` from '
+10/03 17:13:24 - mmengine - INFO - Distributed training is not used, all SyncBatchNorm (SyncBN) layers in the model will be automatically reverted to BatchNormXd layers if they are used.
+10/03 17:13:24 - mmengine - INFO - Hooks will be executed in the following order:
+before_run:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(BELOW_NORMAL) LoggerHook                         
+ -------------------- 
+before_train:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(NORMAL      ) IterTimerHook                      
+(VERY_LOW    ) CheckpointHook                     
+ -------------------- 
+before_train_epoch:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(NORMAL      ) IterTimerHook                      
+(NORMAL      ) DistSamplerSeedHook                
+ -------------------- 
+before_train_iter:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(NORMAL      ) IterTimerHook                      
+ -------------------- 
+after_train_iter:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(NORMAL      ) IterTimerHook                      
+(BELOW_NORMAL) LoggerHook                         
+(LOW         ) ParamSchedulerHook                 
+(VERY_LOW    ) CheckpointHook                     
+ -------------------- 
+after_train_epoch:
+(NORMAL      ) IterTimerHook                      
+(LOW         ) ParamSchedulerHook                 
+(VERY_LOW    ) CheckpointHook                     
+ -------------------- 
+before_val:
+(VERY_HIGH   ) RuntimeInfoHook                    
+ -------------------- 
+before_val_epoch:
+(NORMAL      ) IterTimerHook                      
+ -------------------- 
+before_val_iter:
+(NORMAL      ) IterTimerHook                      
+ -------------------- 
+after_val_iter:
+(NORMAL      ) IterTimerHook                      
+(NORMAL      ) VisualizationHook                  
+(BELOW_NORMAL) LoggerHook                         
+ -------------------- 
+after_val_epoch:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(NORMAL      ) IterTimerHook                      
+(BELOW_NORMAL) LoggerHook                         
+(LOW         ) ParamSchedulerHook                 
+(VERY_LOW    ) CheckpointHook                     
+ -------------------- 
+after_val:
+(VERY_HIGH   ) RuntimeInfoHook                    
+ -------------------- 
+after_train:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(VERY_LOW    ) CheckpointHook                     
+ -------------------- 
+before_test:
+(VERY_HIGH   ) RuntimeInfoHook                    
+ -------------------- 
+before_test_epoch:
+(NORMAL      ) IterTimerHook                      
+ -------------------- 
+before_test_iter:
+(NORMAL      ) IterTimerHook                      
+ -------------------- 
+after_test_iter:
+(NORMAL      ) IterTimerHook                      
+(NORMAL      ) VisualizationHook                  
+(BELOW_NORMAL) LoggerHook                         
+ -------------------- 
+after_test_epoch:
+(VERY_HIGH   ) RuntimeInfoHook                    
+(NORMAL      ) IterTimerHook                      
+(BELOW_NORMAL) LoggerHook                         
+ -------------------- 
+after_test:
+(VERY_HIGH   ) RuntimeInfoHook                    
+ -------------------- 
+after_run:
+(BELOW_NORMAL) LoggerHook                         
+ -------------------- 
+Loads checkpoint by local backend from path: work_dirs/resnet18_catdog_smoke/epoch_1.pth
+10/03 17:13:25 - mmengine - INFO - Load checkpoint from work_dirs/resnet18_catdog_smoke/epoch_1.pth
+10/03 17:13:26 - mmengine - INFO - Epoch(test) [ 50/157]    eta: 0:00:02  time: 0.0160  data_time: 0.0003  memory: 284  
+10/03 17:13:27 - mmengine - INFO - Epoch(test) [100/157]    eta: 0:00:01  time: 0.0164  data_time: 0.0003  memory: 284  
+10/03 17:13:28 - mmengine - INFO - Epoch(test) [150/157]    eta: 0:00:00  time: 0.0170  data_time: 0.0003  memory: 284  
+10/03 17:13:28 - mmengine - INFO - Epoch(test) [157/157]    accuracy/top1: 95.5400  data_time: 0.0008  time: 0.020

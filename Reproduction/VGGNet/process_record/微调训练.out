@@ -1,0 +1,92 @@
+device: cuda
+train images: 18000
+val images: 2000
+train cat: 9000
+train dog: 9000
+val cat: 1000
+val dog: 1000
+total parameters: 134268738
+trainable parameters: 119554050
+
+========== Epoch 1/5 ==========
+Epoch [1] Batch [0/563] Loss: 0.6406 Accuracy: 0.5625
+Epoch [1] Batch [50/563] Loss: 0.4700 Accuracy: 0.9320
+Epoch [1] Batch [100/563] Loss: 0.4346 Accuracy: 0.9486
+Epoch [1] Batch [150/563] Loss: 0.4760 Accuracy: 0.9534
+Epoch [1] Batch [200/563] Loss: 0.4875 Accuracy: 0.9566
+Epoch [1] Batch [250/563] Loss: 0.5342 Accuracy: 0.9575
+Epoch [1] Batch [300/563] Loss: 0.5000 Accuracy: 0.9602
+Epoch [1] Batch [350/563] Loss: 0.4766 Accuracy: 0.9617
+Epoch [1] Batch [400/563] Loss: 0.4515 Accuracy: 0.9640
+Epoch [1] Batch [450/563] Loss: 0.4537 Accuracy: 0.9648
+Epoch [1] Batch [500/563] Loss: 0.4457 Accuracy: 0.9656
+Epoch [1] Batch [550/563] Loss: 0.4329 Accuracy: 0.9668
+Epoch 1 finished | train loss: 0.4336 | train acc: 0.9669 | val loss: 0.3085 | val acc: 0.9745
+Best model saved: /home/alex/workspace1/VLR_Learning/Reproduction/VGGNet/models/vgg16_catvsdog_head_best.pth | val acc: 0.9745
+
+========== Epoch 2/5 ==========
+Epoch [2] Batch [0/563] Loss: 0.0000 Accuracy: 1.0000
+Epoch [2] Batch [50/563] Loss: 0.3596 Accuracy: 0.9792
+Epoch [2] Batch [100/563] Loss: 0.3107 Accuracy: 0.9790
+Epoch [2] Batch [150/563] Loss: 0.2997 Accuracy: 0.9789
+Epoch [2] Batch [200/563] Loss: 0.2966 Accuracy: 0.9792
+Epoch [2] Batch [250/563] Loss: 0.3253 Accuracy: 0.9787
+Epoch [2] Batch [300/563] Loss: 0.3299 Accuracy: 0.9790
+Epoch [2] Batch [350/563] Loss: 0.3231 Accuracy: 0.9784
+Epoch [2] Batch [400/563] Loss: 0.3377 Accuracy: 0.9776
+Epoch [2] Batch [450/563] Loss: 0.3420 Accuracy: 0.9777
+Epoch [2] Batch [500/563] Loss: 0.3459 Accuracy: 0.9774
+Epoch [2] Batch [550/563] Loss: 0.3361 Accuracy: 0.9774
+Epoch 2 finished | train loss: 0.3361 | train acc: 0.9774 | val loss: 0.4113 | val acc: 0.9820
+Best model saved: /home/alex/workspace1/VLR_Learning/Reproduction/VGGNet/models/vgg16_catvsdog_head_best.pth | val acc: 0.9820
+
+========== Epoch 3/5 ==========
+Epoch [3] Batch [0/563] Loss: 0.0027 Accuracy: 1.0000
+Epoch [3] Batch [50/563] Loss: 0.2236 Accuracy: 0.9847
+Epoch [3] Batch [100/563] Loss: 0.2196 Accuracy: 0.9839
+Epoch [3] Batch [150/563] Loss: 0.2237 Accuracy: 0.9851
+Epoch [3] Batch [200/563] Loss: 0.2255 Accuracy: 0.9835
+Epoch [3] Batch [250/563] Loss: 0.2230 Accuracy: 0.9842
+Epoch [3] Batch [300/563] Loss: 0.2278 Accuracy: 0.9844
+Epoch [3] Batch [350/563] Loss: 0.2805 Accuracy: 0.9834
+Epoch [3] Batch [400/563] Loss: 0.3162 Accuracy: 0.9832
+Epoch [3] Batch [450/563] Loss: 0.3240 Accuracy: 0.9823
+Epoch [3] Batch [500/563] Loss: 0.3027 Accuracy: 0.9829
+Epoch [3] Batch [550/563] Loss: 0.3130 Accuracy: 0.9825
+Epoch 3 finished | train loss: 0.3220 | train acc: 0.9824 | val loss: 0.7073 | val acc: 0.9650
+
+========== Epoch 4/5 ==========
+Epoch [4] Batch [0/563] Loss: 0.0000 Accuracy: 1.0000
+Epoch [4] Batch [50/563] Loss: 0.3543 Accuracy: 0.9822
+Epoch [4] Batch [100/563] Loss: 0.3879 Accuracy: 0.9799
+Epoch [4] Batch [150/563] Loss: 0.3411 Accuracy: 0.9824
+Epoch [4] Batch [200/563] Loss: 0.2964 Accuracy: 0.9835
+Epoch [4] Batch [250/563] Loss: 0.2742 Accuracy: 0.9844
+Epoch [4] Batch [300/563] Loss: 0.2549 Accuracy: 0.9849
+Epoch [4] Batch [350/563] Loss: 0.2813 Accuracy: 0.9842
+Epoch [4] Batch [400/563] Loss: 0.2899 Accuracy: 0.9839
+Epoch [4] Batch [450/563] Loss: 0.2922 Accuracy: 0.9837
+Epoch [4] Batch [500/563] Loss: 0.3045 Accuracy: 0.9829
+Epoch [4] Batch [550/563] Loss: 0.2989 Accuracy: 0.9834
+Epoch 4 finished | train loss: 0.3057 | train acc: 0.9832 | val loss: 0.3324 | val acc: 0.9845
+Best model saved: /home/alex/workspace1/VLR_Learning/Reproduction/VGGNet/models/vgg16_catvsdog_head_best.pth | val acc: 0.9845
+
+========== Epoch 5/5 ==========
+Epoch [5] Batch [0/563] Loss: 0.0117 Accuracy: 1.0000
+Epoch [5] Batch [50/563] Loss: 0.3041 Accuracy: 0.9841
+Epoch [5] Batch [100/563] Loss: 0.3761 Accuracy: 0.9848
+Epoch [5] Batch [150/563] Loss: 0.4909 Accuracy: 0.9839
+Epoch [5] Batch [200/563] Loss: 0.4254 Accuracy: 0.9846
+Epoch [5] Batch [250/563] Loss: 0.3870 Accuracy: 0.9851
+Epoch [5] Batch [300/563] Loss: 0.3511 Accuracy: 0.9855
+Epoch [5] Batch [350/563] Loss: 0.3718 Accuracy: 0.9849
+Epoch [5] Batch [400/563] Loss: 0.3585 Accuracy: 0.9846
+Epoch [5] Batch [450/563] Loss: 0.3642 Accuracy: 0.9843
+Epoch [5] Batch [500/563] Loss: 0.3644 Accuracy: 0.9840
+Epoch [5] Batch [550/563] Loss: 0.3446 Accuracy: 0.9846
+Epoch 5 finished | train loss: 0.3440 | train acc: 0.9846 | val loss: 0.4385 | val acc: 0.9840
+
+Training finished
+Best epoch: 4
+Best val accuracy: 0.9845
+

@@ -1,13 +1,27 @@
-Reproduction/VGGNet/data/
-Reproduction/ResNet/data/
-Reproduction/VGGNet/models/*
-Reproduction/ResNet/models/*
-!Reproduction/VGGNet/models/.gitkeep
+# Datasets
+Reproduction/*/data/
 
+# Model weights
+Reproduction/*/models/*
+!Reproduction/*/models/.gitkeep
 *.pth
 *.pt
 *.ckpt
 *.onnx
+*.safetensors
 
+# MMPretrain and training outputs
+work_dirs/
+*.tfevents
+events.out.tfevents.*
+
+# Python
 __pycache__/
 *.py[cod]
+
+# IDE
+.vscode/
+.idea/
+
+# Windows metadata
+*:Zone.Identifier

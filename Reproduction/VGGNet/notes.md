@@ -1,5 +1,8 @@
-# Reproduction of VGGNet(VGG16)
+# VGGNet16 复现
 
+基础复现VGG16，并使用猫狗数据集进行微调训练和测试。
+
+未参考MMPretrain框架；未实现训练可视化；未集成SENet模块。
 
 ## 1.0 目录结构
 
@@ -39,58 +42,85 @@ VGGNet
 
 ## 1.1 评估未微调的官方权重模型
 下载官方预训练的VGG16权重（ImageNet V1），并用猫狗数据集进行测试与评估。在VGGNet目录下运行
-`python predict_by_non_fine-tuning_pretrained_model.py`
+`python eval_vgg16_imagenet.py`
 
+输出如图：
+![图：评估未微调的官方权重模型](process_record/non_fine-tuning%20vgg16.png)
+准确率为 91.06% 。
 
 ## 1.2 使用猫狗数据集从零训练VGG16
 
 按照网页教程 https://cloud.tencent.com/developer/article/1980647 ，复现vgg16并使用猫狗二分类数据集从零训练参数。
 
+环境：
+`````
+System: Ubuntu-20.04
+RAM: 256 GB
+GPU：NVIDIA Quadro RTX 6000(24GB)
+CUDA Version: 12.8
+Python Version: Python 3.10.20
+Pytorch Version: 
+        torch 2.7.1+cu118  
+        torchaudio 2.7.1+cu118 
+        torchvision 0.22.1+cu118
+`````
+
 制作训练集、测试集图片索引txt文件，在VGGNet目录下运行 
 `python make_reference.py` 
+
+然后运行训练：
+`python train.py`
+
+输出如 `./process_record/从零训练.out` 所示
+
+最佳 epoch：19
+最高准确率：94.26%
+
+模型会保存为 `./models/vgg-catvsdog.pth`
+
+对单张图片进行推理：`python predict.py`
 
 ## 1.3 加载官方预训练权重进行微调
 
 环境：
+`````
+System: Ubuntu-24.04
+RAM: 64 GB
+GPU：NVIDIA GeForce RTX 5070 Laptop GPU (8 GB)
+CUDA Version: 12.8
+Python Version: Python 3.10.21
+Pytorch Version: 
+        torch 2.11.0+cu128  
+        torchaudio 2.11.0+cu128 
+        torchvision 0.26.0+cu128
+`````
 
-    System: Ubuntu-24.04
-    
-    RAM: 64GB
-    
-    GPU：NVIDIA GeForce RTX 5070 Laptop GPU (8 GB)
-    
-    CUDA Version: 12.8
-   
-    Python Version: Python 3.10.21
-    
-    Pytorch Version: torch 2.11.0+cu128  
-                     
-                     torchaudio 2.11.0+cu128 
-                     
-                     torchvision 0.26.0+cu128
+进行训练：
+`python train_pretrain.py`
 
+训练输出记录在： `process_record/微调训练.out`
+
+进行测试：
+`python test_pretrain.py`
+
+测试输出如图：
+![图](process_record/微调测试.png)
+
+训练记录：
+`````
 模型：VGG16
-
 预训练权重：ImageNet1K V1
-
 训练方式：冻结卷积层，只训练分类头
-
 数据：18000 train / 2000 val / 5000 test
-
 epoch：5
-
 最佳 epoch：4
-
 best val accuracy：98.45%
-
 test accuracy：98.4000%
-
 cat accuracy：98.2800%
-
 dog accuracy：98.5200%
-
 correct：4920/5000
-
 Total time: 14.87 seconds
-
 Average time per image: 2.97 ms
+`````
+
+微调后最终准确率为 98.4%

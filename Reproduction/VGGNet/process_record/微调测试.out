@@ -1,0 +1,17 @@
+device: cuda
+checkpoint: /home/alex/workspace1/VLR_Learning/Reproduction/VGGNet/models/vgg16_catvsdog_head_best.pth
+checkpoint epoch: 4
+checkpoint val loss: 0.33241235354921367
+checkpoint val acc: 0.9845
+classes: ['cat', 'dog']
+class_to_idx: {'cat': 0, 'dog': 1}
+test images: 5000
+
+========== Final Test Result ==========
+Overall accuracy: 98.4000%
+Cat accuracy: 98.2800%
+Dog accuracy: 98.5200%
+Correct: 4920/5000
+Total time: 14.87 seconds
+Average time per image: 2.97 ms
+=======================================

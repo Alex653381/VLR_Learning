@@ -1,0 +1,209 @@
+start_time 2026-09-28 07:28:56
+Train Epoch1     Loss: 0.692949, accuracy: 50.000000%
+Train Epoch1     Loss: 0.692968, accuracy: 49.845297%
+Train Epoch1     Loss: 0.693174, accuracy: 49.440299%
+Train Epoch1     Loss: 0.693067, accuracy: 49.730066%
+test_avarage_loss: 0.693142, accuracy: 50.000000%
+end_time:  2026-09-28 07:32:29 
+
+start_time 2026-09-28 07:32:29
+Train Epoch2     Loss: 0.692937, accuracy: 50.000000%
+Train Epoch2     Loss: 0.693111, accuracy: 50.897277%
+Train Epoch2     Loss: 0.696391, accuracy: 50.575249%
+Train Epoch2     Loss: 0.693211, accuracy: 50.306271%
+test_avarage_loss: 0.693145, accuracy: 50.000000%
+end_time:  2026-09-28 07:35:59 
+
+start_time 2026-09-28 07:35:59
+Train Epoch3     Loss: 0.693449, accuracy: 45.312500%
+Train Epoch3     Loss: 0.692627, accuracy: 49.474010%
+Train Epoch3     Loss: 0.693141, accuracy: 50.031095%
+Train Epoch3     Loss: 0.676607, accuracy: 51.136836%
+test_avarage_loss: 0.668433, accuracy: 57.820000%
+end_time:  2026-09-28 07:39:31 
+
+start_time 2026-09-28 07:39:31
+Train Epoch4     Loss: 0.652013, accuracy: 56.250000%
+Train Epoch4     Loss: 0.618032, accuracy: 56.714109%
+Train Epoch4     Loss: 0.604766, accuracy: 58.527674%
+Train Epoch4     Loss: 0.673070, accuracy: 59.276370%
+test_avarage_loss: 0.609382, accuracy: 64.440000%
+end_time:  2026-09-28 07:43:02 
+
+start_time 2026-09-28 07:43:02
+Train Epoch5     Loss: 0.652281, accuracy: 51.562500%
+Train Epoch5     Loss: 0.595068, accuracy: 63.072401%
+Train Epoch5     Loss: 0.590573, accuracy: 63.899254%
+Train Epoch5     Loss: 0.460152, accuracy: 65.090324%
+test_avarage_loss: 0.556331, accuracy: 70.860000%
+end_time:  2026-09-28 07:46:33 
+
+start_time 2026-09-28 07:46:33
+Train Epoch6     Loss: 0.589809, accuracy: 75.000000%
+Train Epoch6     Loss: 0.548580, accuracy: 70.652847%
+Train Epoch6     Loss: 0.562333, accuracy: 72.807836%
+Train Epoch6     Loss: 0.426496, accuracy: 74.330357%
+test_avarage_loss: 0.404561, accuracy: 81.380000%
+end_time:  2026-09-28 07:50:04 
+
+start_time 2026-09-28 07:50:04
+Train Epoch7     Loss: 0.438674, accuracy: 78.125000%
+Train Epoch7     Loss: 0.349487, accuracy: 81.188119%
+Train Epoch7     Loss: 0.320784, accuracy: 82.369403%
+Train Epoch7     Loss: 0.382020, accuracy: 82.838455%
+test_avarage_loss: 0.324195, accuracy: 85.600000%
+end_time:  2026-09-28 07:53:35 
+
+start_time 2026-09-28 07:53:35
+Train Epoch8     Loss: 0.258459, accuracy: 85.937500%
+Train Epoch8     Loss: 0.429607, accuracy: 85.674505%
+Train Epoch8     Loss: 0.198391, accuracy: 86.318408%
+Train Epoch8     Loss: 0.327902, accuracy: 86.913414%
+test_avarage_loss: 0.316947, accuracy: 86.340000%
+end_time:  2026-09-28 07:57:05 
+
+start_time 2026-09-28 07:57:05
+Train Epoch9     Loss: 0.202521, accuracy: 90.625000%
+Train Epoch9     Loss: 0.348505, accuracy: 89.124381%
+Train Epoch9     Loss: 0.273344, accuracy: 89.046953%
+Train Epoch9     Loss: 0.230035, accuracy: 89.104028%
+test_avarage_loss: 0.251661, accuracy: 88.540000%
+end_time:  2026-09-28 08:00:34 
+
+start_time 2026-09-28 08:00:34
+Train Epoch10    Loss: 0.194778, accuracy: 93.750000%
+Train Epoch10    Loss: 0.152386, accuracy: 90.872525%
+Train Epoch10    Loss: 0.157095, accuracy: 90.718284%
+Train Epoch10    Loss: 0.123311, accuracy: 90.920889%
+test_avarage_loss: 0.255243, accuracy: 88.720000%
+end_time:  2026-09-28 08:04:04 
+
+start_time 2026-09-28 08:04:04
+Train Epoch11    Loss: 0.164591, accuracy: 92.187500%
+Train Epoch11    Loss: 0.299634, accuracy: 91.800743%
+Train Epoch11    Loss: 0.163545, accuracy: 92.078669%
+Train Epoch11    Loss: 0.210634, accuracy: 92.286130%
+test_avarage_loss: 0.192875, accuracy: 91.860000%
+end_time:  2026-09-28 08:07:34 
+
+start_time 2026-09-28 08:07:34
+Train Epoch12    Loss: 0.215833, accuracy: 93.750000%
+Train Epoch12    Loss: 0.145306, accuracy: 93.626238%
+Train Epoch12    Loss: 0.204744, accuracy: 93.446828%
+Train Epoch12    Loss: 0.226412, accuracy: 93.397010%
+test_avarage_loss: 0.207525, accuracy: 91.300000%
+end_time:  2026-09-28 08:11:03 
+
+start_time 2026-09-28 08:11:03
+Train Epoch13    Loss: 0.174502, accuracy: 93.750000%
+Train Epoch13    Loss: 0.135128, accuracy: 93.688119%
+Train Epoch13    Loss: 0.187510, accuracy: 93.998756%
+Train Epoch13    Loss: 0.156908, accuracy: 93.921304%
+test_avarage_loss: 0.167184, accuracy: 93.120000%
+end_time:  2026-09-28 08:14:33 
+
+start_time 2026-09-28 08:14:33
+Train Epoch14    Loss: 0.119328, accuracy: 96.875000%
+Train Epoch14    Loss: 0.198980, accuracy: 95.034035%
+Train Epoch14    Loss: 0.122289, accuracy: 94.814988%
+Train Epoch14    Loss: 0.017634, accuracy: 94.829734%
+test_avarage_loss: 0.188966, accuracy: 92.820000%
+end_time:  2026-09-28 08:18:03 
+
+start_time 2026-09-28 08:18:03
+Train Epoch15    Loss: 0.090427, accuracy: 96.875000%
+Train Epoch15    Loss: 0.094828, accuracy: 95.080446%
+Train Epoch15    Loss: 0.083725, accuracy: 95.164801%
+Train Epoch15    Loss: 0.180283, accuracy: 95.317691%
+test_avarage_loss: 0.163519, accuracy: 93.540000%
+end_time:  2026-09-28 08:21:32 
+
+start_time 2026-09-28 08:21:32
+Train Epoch16    Loss: 0.060515, accuracy: 98.437500%
+Train Epoch16    Loss: 0.067180, accuracy: 95.544554%
+Train Epoch16    Loss: 0.096922, accuracy: 95.592351%
+Train Epoch16    Loss: 0.127930, accuracy: 95.608389%
+test_avarage_loss: 0.150872, accuracy: 93.880000%
+end_time:  2026-09-28 08:25:02 
+
+start_time 2026-09-28 08:25:02
+Train Epoch17    Loss: 0.044381, accuracy: 100.000000%
+Train Epoch17    Loss: 0.165388, accuracy: 96.039604%
+Train Epoch17    Loss: 0.070342, accuracy: 96.066542%
+Train Epoch17    Loss: 0.137072, accuracy: 95.888704%
+test_avarage_loss: 0.162790, accuracy: 94.180000%
+end_time:  2026-09-28 08:28:31 
+
+start_time 2026-09-28 08:28:31
+Train Epoch18    Loss: 0.111960, accuracy: 98.437500%
+Train Epoch18    Loss: 0.089570, accuracy: 96.859530%
+Train Epoch18    Loss: 0.052826, accuracy: 96.657338%
+Train Epoch18    Loss: 0.103329, accuracy: 96.553156%
+test_avarage_loss: 0.168984, accuracy: 94.060000%
+end_time:  2026-09-28 08:32:01 
+
+start_time 2026-09-28 08:32:01
+Train Epoch19    Loss: 0.101712, accuracy: 95.312500%
+Train Epoch19    Loss: 0.119067, accuracy: 96.859530%
+Train Epoch19    Loss: 0.031211, accuracy: 96.680659%
+Train Epoch19    Loss: 0.239547, accuracy: 96.714078%
+test_avarage_loss: 0.143885, accuracy: 94.260000%
+end_time:  2026-09-28 08:35:30 
+
+start_time 2026-09-28 08:35:30
+Train Epoch20    Loss: 0.022796, accuracy: 100.000000%
+Train Epoch20    Loss: 0.081967, accuracy: 97.230817%
+Train Epoch20    Loss: 0.074941, accuracy: 96.688433%
+Train Epoch20    Loss: 0.035902, accuracy: 96.791944%
+test_avarage_loss: 0.206073, accuracy: 94.240000%
+end_time:  2026-09-28 08:39:00 
+
+Finished Training
+/home/yhhuang/workspace1/VGGNet/train.py:213: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+/home/yhhuang/workspace1/VGGNet/train.py:217: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+VGG(
+  (features): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): ReLU(inplace=True)
+    (2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (3): ReLU(inplace=True)
+    (4): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (5): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (6): ReLU(inplace=True)
+    (7): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (8): ReLU(inplace=True)
+    (9): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (10): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (11): ReLU(inplace=True)
+    (12): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (13): ReLU(inplace=True)
+    (14): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (15): ReLU(inplace=True)
+    (16): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (17): Conv2d(256, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (18): ReLU(inplace=True)
+    (19): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (20): ReLU(inplace=True)
+    (21): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (22): ReLU(inplace=True)
+    (23): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+    (24): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (25): ReLU(inplace=True)
+    (26): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (27): ReLU(inplace=True)
+    (28): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (29): ReLU(inplace=True)
+    (30): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  )
+  (classifier): Sequential(
+    (0): Linear(in_features=25088, out_features=500, bias=True)
+    (1): ReLU(inplace=True)
+    (2): Dropout(p=0.5, inplace=False)
+    (3): Linear(in_features=500, out_features=20, bias=True)
+    (4): ReLU(inplace=True)
+    (5): Dropout(p=0.5, inplace=False)
+    (6): Linear(in_features=20, out_features=2, bias=True)
+  )
+)
