@@ -10,6 +10,8 @@ Reproduction/*/models/*
 *.onnx
 *.safetensors
 
+Reproduction/release_assets/
+
 # MMPretrain and training outputs
 work_dirs/
 *.tfevents
