@@ -4,6 +4,10 @@
 
 这是一个用于VLR实验室轮转学习的代码仓库
 
+## 论文笔记
+
+这里是论文阅读笔记。
+
 ## Reproduction
 
 这里是经典论文、模型的学习与复现，复现过程已记录在各子目录下的 notes.md 中。
@@ -43,4 +47,8 @@ ResNet/work_dirs/...
 
 ### 2.ResNet
 
-参考MMPretrain代码框架复现ResNet，并针对CatVSDog数据集进行微调训练。已实现 Tensorboard 训练过程可视化；未实现集成 SENet 模块；未实现 DDP 多卡训练。
+参考MMPretrain代码框架复现ResNet18，并针对CatVSDog数据集进行微调训练。已实现 Tensorboard 训练过程可视化；未实现集成 SENet 模块；未实现 DDP 多卡训练。
+
+### 3.TurboVLA
+
+在 Libero 上复现并评测 Turbo VLA ，使用4个 suite 评测： libero_10 、 libero_goal 、 libero_object 、libero_spatial，取平均准确率，目前最高为 93.4% 。
