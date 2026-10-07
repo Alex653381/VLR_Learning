@@ -1,0 +1,27 @@
+# TurboVLA 环境配置命令
+
+git clone https://github.com/H-EmbodVis/TurboVLA.git
+cd TurboVLA
+
+conda create -n turbovla-libero python=3.10 -y
+conda activate turbovla-libero
+
+pip install torch==2.8.0+cu128 torchvision==0.23.0+cu128 \
+  --index-url https://download.pytorch.org/whl/cu128
+
+pip install -e ".[libero]"
+pip install matplotlib termcolor
+pip install mujoco==2.3.7
+
+# LIBERO 源码
+cd ..
+git clone https://github.com/Lifelong-Robot-Learning/LIBERO.git
+cd LIBERO
+pip install -e .
+
+# 使用无头渲染库（因为使用了WSL）
+wsl -u root apt-get update -qq
+wsl -u root apt-get install -y libosmesa6
+
+#可能需要的下载镜像
+export HF_ENDPOINT=https://hf-mirror.com
