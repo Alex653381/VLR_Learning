@@ -49,9 +49,13 @@ ResNet/work_dirs/...
 
 使用pytorch官方的vgg16权重（IMAGENET1K_V1）针对CatVSDog数据集进行微调训练。未参考MMPretrain框架；未实现训练可视化；未集成SENet模块。
 
+微调后最终准确率为 98.4%
+
 ### 2.ResNet
 
 参考MMPretrain代码框架复现ResNet18，并针对CatVSDog数据集进行微调训练。已实现 Tensorboard 训练过程可视化；未实现集成 SENet 模块；未实现 DDP 多卡训练。
+
+微调后最终准确率为 98.88%
 
 ### 3.TurboVLA
 
