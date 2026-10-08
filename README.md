@@ -53,9 +53,9 @@ ResNet/work_dirs/...
 
 ### 2.ResNet
 
-参考MMPretrain代码框架复现ResNet18，并针对CatVSDog数据集进行微调训练。已实现 Tensorboard 训练过程可视化；未实现集成 SENet 模块；未实现 DDP 多卡训练。
+参考MMPretrain代码框架复现ResNet18和Resnet50，并针对CatVSDog数据集进行微调训练。已实现 Tensorboard 训练过程可视化；未实现集成 SENet 模块；未实现 DDP 多卡训练。
 
-微调后最终准确率为 98.88%
+微调后最终准确率为 Resnet18: 98.88%     Resnet50: 99.10%
 
 ### 3.TurboVLA
 

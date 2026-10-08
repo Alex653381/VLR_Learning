@@ -1,8 +1,8 @@
 # ResNet复现
 
-基于 MMPretrain 的 ResNet18 迁移学习复现。
+基于 MMPretrain 的 ResNet18、ResNet50 迁移学习复现。
 
-参考MMPretrain代码框架加载预训练的ResNet18权重模型，并使用猫狗训练集进行微调。
+参考 MMPretrain 代码框架，分别加载预训练的 ResNet18 和 ResNet50 权重模型，并使用猫狗训练集进行微调。
 
 未集成 SENet 模块；未实现 DDP 多卡训练
 
@@ -29,6 +29,8 @@
     mmcv 2.2.0
 
     mmpretrain 1.2.0
+
+以下第 1 至 8 节为通用环境、数据配置和工具说明，第 9 至 11 节记录 ResNet18，第 12 至 15 节记录 ResNet50。
 
 ## 1. 生成MMPretrain格式的数据标注
 
@@ -62,7 +64,7 @@ python tools/make_catdog_split.py
     
     test_split.txt
 
-## 3. ResNet18模型配置
+## 3. ResNet18 模型配置
 
 相关文件： 
 
@@ -174,10 +176,10 @@ optimizer: SGD
 learning rate: 0.01
 max epochs: 10
 work dir: work_dirs/resnet18_catdog
-vis backends: ['LocalVisBackend', 'TensorBoardVisBackend']
+vis backends: ['LocalVisBackend', 'mmengine.TensorboardVisBackend']
 `````
 
-## 6. 最简冒烟测试
+## 6. ResNet18 最简冒烟测试
 
 相关文件：
 
@@ -267,7 +269,7 @@ python tools/infer.py \
 `````
 可加参数 `````--show-dir work_dirs/infer_visualization````` 把预测结果画到原图上，保存一张带文字标注的结果图。位置在 `./work_dirs/infer_visualization/test_dog.png`
 
-## 9. 正式训练
+## 9. ResNet18 正式训练
 
 启动训练：
 `````
@@ -309,7 +311,7 @@ work_dirs/resnet18_catdog/
 `tensorboard --logdir work_dirs/resnet18_catdog --port 6006 --bind_all`
 浏览器打开：`http://localhost:6006`可查看训练过程生成的可视化结果。
 
-## 10. 用训练后的最佳模型测试、推理
+## 10. ResNet18 测试和推理
 
 检查`./work_dir`目录下的最佳模型文件名，如：`best_accuracy_top1_epoch_7.pth`
 
@@ -331,7 +333,7 @@ python tools/infer.py \
     --show-dir work_dirs/infer_visualization
 `````
 
-## 11.测试、推理记录
+## 11. ResNet18 测试、推理记录
 
 `````
 模型：ResNet18
@@ -357,3 +359,84 @@ final test accuracy：98.88%
 
 单张推理输出如图：
 ![图：infer_best_pth.png](process_record/infer_best_pth.png)
+
+## 12. ResNet50 模型配置
+
+相关文件：
+
+    ./configs/_base_/models/resnet50_catdog.py
+    ./configs/resnet50_catdog.py
+
+ResNet50 与 ResNet18 使用相同的数据集、训练调度和运行配置，主要区别如下：
+
+    depth: 50
+    最后阶段输出通道数: 2048
+    分类头输入通道数: 2048
+    预训练权重：resnet50_8xb32_in1k_20210831-ea4938fc.pth
+    work_dir: work_dirs/resnet50_catdog
+
+## 13. ResNet50 正式训练
+
+启动训练：
+`````
+python tools/train.py \
+    configs/resnet50_catdog.py \
+    --work-dir work_dirs/resnet50_catdog
+`````
+
+训练使用完整配置：
+`````
+训练集：18000 张
+验证集：2000 张
+测试集：5000 张
+epoch：10
+batch size：32
+优化器：SGD，初始学习率 0.01
+最佳模型指标：验证集 accuracy/top1
+`````
+
+训练日志和 checkpoint 保存在：
+
+    work_dirs/resnet50_catdog/
+
+最佳 checkpoint：
+
+    work_dirs/resnet50_catdog/best_accuracy_top1_epoch_8.pth
+
+## 14. ResNet50 测试和推理
+
+**运行测试**：
+`````
+python tools/test.py \
+    configs/resnet50_catdog.py \
+    work_dirs/resnet50_catdog/best_accuracy_top1_epoch_8.pth \
+    --work-dir work_dirs/resnet50_catdog_final_test
+`````
+
+最后输出的 `accuracy/top1:` 为模型在 5000 张测试图片上的表现。
+
+**单张图片推理**：
+`````
+python tools/infer.py \
+    images/test_dog.jpg \
+    --config configs/resnet50_catdog.py \
+    --checkpoint work_dirs/resnet50_catdog/best_accuracy_top1_epoch_8.pth \
+    --show-dir work_dirs/infer_visualization_resnet50
+`````
+
+## 15. ResNet50 测试、推理记录
+
+`````
+模型：ResNet50
+预训练权重：ImageNet 1K
+数据：18000 train / 2000 val / 5000 test
+epoch：10
+batch size：32
+优化器：SGD
+初始学习率：0.01
+最佳 epoch：8
+best val accuracy：99.10%
+final test accuracy：99.10%
+`````
+
+即 ResNet50 微调后最终测试准确率为 99.10%。
